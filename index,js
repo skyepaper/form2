@@ -1,0 +1,24 @@
+$(document).ready(function() {  
+
+    const roomPrototype = $('.room').clone()
+    let rooms = []
+ 
+   $('button').click(function() {
+        $('.container').append(roomPrototype.clone(true))
+   })
+
+   $('.container').change(function() {
+    
+        rooms = []
+        $(this).children('.room').each(function() {
+            let newRoom = {
+                type:$(this).children('select[name=type]').val(),
+                beds:$(this).children('select[name=beds]').val(),
+            }
+            rooms.push(newRoom)
+        })
+       rooms.push(rooms)
+        console.log(rooms)
+   })
+    
+ });  
